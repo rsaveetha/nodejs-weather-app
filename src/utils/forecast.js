@@ -6,11 +6,11 @@ const forecast = (latitude, longitude, callback)=>{
 
 request({url,json:true},(error,{body})=>{
     if(error){
-        callback('Check your internet connetivirt', undefined)
+        callback('Check your internet connetivity', undefined)
     }else if(body.error){
         callback('Check the input params, it seem to be wrong!')
     }else{
-        callback(undefined,"Hello "+body.location.name+"!.It is currently " +body.current.temperature+" F out. The weather is  "+body.current.weather_descriptions[0]+"!.")
+        callback(undefined,"Hello "+body.location.name+"!.It is currently " +body.current.temperature+" F out. The weather is  "+body.current.weather_descriptions[0]+"!. The Humidity is "+body.current.humidity+" percent .")
     }
 })
 }
